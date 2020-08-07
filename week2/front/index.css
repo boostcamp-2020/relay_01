@@ -11,6 +11,7 @@ body {
 }
 
 header {
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +54,7 @@ header {
 }
 
 nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
@@ -73,7 +74,7 @@ nav {
 }
 
 #main {
-  padding-top: 50px;
+  padding-top: 200px;
   padding-left: 350px;
   padding-right: 50px;
   padding-bottom: 50px;
@@ -85,6 +86,8 @@ nav {
 
   padding: 30px 10px;
   border-bottom: 1px solid #dddddd;
+
+  line-height: 1.4;
 }
 
 .name {
@@ -92,6 +95,22 @@ nav {
   font-size: 1.5rem;
 }
 
-.singer {
+.artist {
   font-size: 1.5rem;
+}
+
+.thumbnail {
+  display: block;
+
+  border-radius: 8px;
+  margin-right: 30px;
+
+  width: 300px;
+  height: 200px;
+}
+
+.track-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
