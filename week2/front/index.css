@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "IBMPlexSansKR-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "IBMPlexSansKR-Regular";
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 150px;
+
+  background-color: #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+
+#input-mood {
+  width: 700px;
+  height: 30px;
+
+  margin-right: 20px;
+
+  padding: 10px;
+
+  border: 0px;
+  border-radius: 5px;
+
+  box-sizing: border-box;
+  outline: none;
+}
+
+#search-mood {
+  width: 100px;
+  height: 30px;
+
+  border: 0px;
+  border-radius: 5px;
+
+  outline: none;
+  box-sizing: border-box;
+}
+
+#search-mood:hover {
+  background-color: #aaaaaa;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 300px;
+  height: 100vh;
+
+  padding-top: 200px;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  background-color: white;
+  border-right: 1px solid #cccccc;
+
+  box-sizing: border-box;
+}
+
+#main {
+  padding-top: 50px;
+  padding-left: 350px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
+.track {
+  display: flex;
+
+  padding: 30px 10px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.name {
+  width: 400px;
+  font-size: 1.5rem;
+}
+
+.singer {
+  font-size: 1.5rem;
+}
