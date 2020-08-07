@@ -89,10 +89,61 @@ Relay01
 
 ---
 
+
 ### 3. 감정 분석 결과로 음악 검색
 
-- 감정 분석 결과로 사운드 클라우드에 노래 검색 요청
+1) 계획
+    - 사용자의 감정에 부합하는 bpm을 구하고, 계산된 bpm을 바탕으로 [SoundCloud](https://soundcloud.com/)의 음원찾기 API를 활용하여 음원을 찾는다.
+    - SoundCloud 음악 검색 API - https://developers.soundcloud.com/docs/api/reference#users
 
-- 사운드 클라우드 음악 검색 API
+2) 진행
+> (120 <= BPM <= 130) 음원을 검색하는 코드
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
+    <script>
+    
+    SC.initialize({
+      client_id: '6150dd7ff5335b40c8d9faaf7e7c4644'
+    });
+    
+    SC.get('/tracks', {
+        bpm: { from: 120, to: 130 }
+    }).then(function(tracks) {
+        tracks.forEach((track, idx) => {
+            console.log(`#${idx + 1}\n ${track.artwork_url}\n${track.bpm}\n${track.permalink}\n${track.permalink_url}`);
+        });
+    });
+    
+    </script>  
+</body>
+</html>
+```
 
-    [https://developers.soundcloud.com/docs/api/reference#users](https://developers.soundcloud.com/docs/api/reference#users)
+> Console 출력 화면 - 오픈 API를 사용하여 120 이상 130 이하의 bpm을 가진 음원들의 이미지, bpm, 제목, 재생링크 등을 가져왔다.
+
+![soundcloud](./images/soundcloud.png)
+
+3) 문제점
+    - API를 사용하기 위해서 SoundCloud 에 App을 등록하는 절차가 필수인데, 해당 API에 대한 요청이 폭주하여 App 등록이 일시적으로 막혔고 따라서 새로운 API KEY를 발급받을 수 없었다. 위의 코드는 github에서 우연히 발견한 API KEY를 사용(도용)하여 간단하게 결과를 출력했지만, 남은 relay-project 기간 동안 계속 사용하기에는 부적절하다고 판단했다.
+
+
+4) 대안
+    - 자체적으로 음원DB를 만들어 사용하기로 결정. ~~('인공지능 학습'이라는 relay-project 의 취지에 맞게)~~
+    - 추가적으로 원활한 검색을 위해 bpm 이 아닌 사용자의 '무드'를 음원검색 요청변수로 변경했다.
+
+> 음원DB
+
+![DB 만들기](./images/DB.png)
+
+
+> JSON 형식으로 변환
+
+![JSON](./images/JSON.png)
