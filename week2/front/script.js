@@ -74,10 +74,6 @@ const getMusicJsonNode = (obj, mood) => {
   let trackNode = document.createElement("div");
   trackNode.setAttribute("class", "track");
 
-  let thumbNailNode = document.createElement("img");
-  thumbNailNode.setAttribute("class", "thumbnail");
-  thumbNailNode.setAttribute("src", obj.assets.waveform.url);
-
   let trackInfoWrapperNode = document.createElement("div");
   trackInfoWrapperNode.setAttribute("class", "track-info-wrapper");
 
@@ -102,7 +98,6 @@ const getMusicJsonNode = (obj, mood) => {
   preMp3Node.setAttribute("src", obj.assets.preview_mp3.url);
 
   // 노드들 부모, 자식 관계 설정
-  trackNode.appendChild(thumbNailNode);
   trackNode.appendChild(trackInfoWrapperNode);
   trackInfoWrapperNode.appendChild(titleNode);
   trackInfoWrapperNode.appendChild(desNode);

@@ -96,10 +96,6 @@ nav {
   font-size: 1.5rem;
 }
 
-.artist {
-  font-size: 1.5rem;
-}
-
 .thumbnail {
   display: block;
 
@@ -111,7 +107,36 @@ nav {
 }
 
 .track-info-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  width: 100%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "title title mood audio"
+    "des des des des";
+  gap: 20px 10px;
+  background-color: #DDDDDD;
+  border-radius: 30px;
+  padding: 15px;
+}
+
+.title {
+  font-size: 2rem;
+  grid-area: title;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mood {
+  grid-area: mood;
+}
+
+.preview_mp3 {
+  grid-area: audio;
+  right: 10px;
+}
+
+.description {
+  grid-area: des;
 }
