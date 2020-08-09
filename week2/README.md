@@ -157,3 +157,7 @@ Relay01
 6) 개선(주말)
     - shutterstock developers 에 성공적으로 App을 등록 후 API KEY 발급에 성공.
     - fakeDB를 사용하는 대신 mood를 요청 변수로 보낸 후 음원 결과를 반환 받음.
+
+> 순서도
+
+![실행순서도](./images/flow.png)
