@@ -1,7 +1,5 @@
-
-  8월 7일 금요일
-
-Relay01
+# 💡 Relay Project - 소리올려  
+<img width="400" src="https://user-images.githubusercontent.com/60081031/89016426-af98e280-d353-11ea-9d8f-6a8c479e89fd.jpg">  
 
 ### **음악에 대한 정보를 쉽게 접근하고 공유할 수 있는 사이트**
 
@@ -16,7 +14,9 @@ Relay01
 **기존 계획**
 
 - 사운드 클라우드의 앨범과 음악 소개를 자연어 처리를 통해 사용자가 노래 검색에 대한 접근과 공유를 쉽게 해준다.
-- 자신의 감정을 한 줄로 표현한 코멘트를 바탕으로 노래 검색 Ex) 오늘 비가 오니 우울해요.
+- 자신의 감정을 한 줄로 표현한 코멘트를 바탕으로 노래 검색 Ex) 오늘 비가 오니 우울해요.  
+
+<img width="600" src="https://user-images.githubusercontent.com/46911854/89735049-bbdf1700-da9a-11ea-9ce3-478d79bc6787.png">  
 
 ---
 
@@ -33,7 +33,9 @@ Relay01
 - **script.js**
     - index.html에 연결되어 있다.
 - **util/api.js**
-    - getAdam( text ) => text의 값의 감정을 분석하는 api의 결과값을 받아오는 함수.
+    - getAdam( text ) => text의 값의 감정을 분석하는 api의 결과값을 받아오는 함수.  
+- **util/Shutterstock.js**
+    - getAudio( mood ) => mood로 음악 검색하는 api의 결과값을 받아오는 함수.  
 
 
     [Axios 사용법](https://velog.io/@rohkorea86/비동기-비동기에-대해서-차근차근-다루려고-합니다)
@@ -83,10 +85,6 @@ Relay01
 
 → 사운드 클라우드 음악 검색을 위한 API 계정 생성이 막혀있음(서비스 중지)
 
-### 대안책
-
-...
-
 ---
 
 
@@ -97,7 +95,7 @@ Relay01
     - SoundCloud 음악 검색 API - https://developers.soundcloud.com/docs/api/reference#users
 
 2) 진행
-> (120 <= BPM <= 130) 음원을 검색하는 코드
+> (120 <= BPM <= 130) 음원을 검색하는 코드  
 ```javascript
 <!DOCTYPE html>
 <html lang="en">
@@ -109,11 +107,11 @@ Relay01
 <body>
     <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
     <script>
-    
+
     SC.initialize({
       client_id: '6150dd7ff5335b40c8d9faaf7e7c4644'
     });
-    
+
     SC.get('/tracks', {
         bpm: { from: 120, to: 130 }
     }).then(function(tracks) {
@@ -121,13 +119,13 @@ Relay01
             console.log(`#${idx + 1}\n ${track.artwork_url}\n${track.bpm}\n${track.permalink}\n${track.permalink_url}`);
         });
     });
-    
+
     </script>  
 </body>
 </html>
-```
+```  
 
-> Console 출력 화면 - 오픈 API를 사용하여 120 이상 130 이하의 bpm을 가진 음원들의 이미지, bpm, 제목, 재생링크 등을 가져왔다.
+> Console 출력 화면 - 오픈 API를 사용하여 120 이상 130 이하의 bpm을 가진 음원들의 이미지, bpm, 제목, 재생링크 등을 가져왔다.  
 
 ![soundcloud](./images/soundcloud.png)
 
