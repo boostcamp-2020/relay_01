@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사진으로 음악 검색</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Pacifico&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="/css/common.css">
+  <link rel="stylesheet" type="text/css" href="/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="/css/search.css">
+</head>
+
+<body>
+
+  <header class="page-header">
+    <h1 class="page-title">
+      <a href="/" class="page-logo">SoRi-olryeo</a>
+    </h1>
+  </header>
+  <div class="error_msg" style="display:none;">
+    웹캠 실행은 https 환경에서만 가능합니다..😢<br><br><br>
+    캠 실행이 안되면 아래에 <span style="font-weight:bold;">파일 선택</span>버튼을 눌러서<br>
+    <span style="font-weight:bold;">사람이 나온 사진</span>을 선택 후 사진 분석 버튼을 눌러주세요.<br><br><br>
+    분석이 끝나면(2초 정도 소요) 하단에 추천 곡이 나옵니다.<br>
+  </div>
+
+  <video id="player" autoplay style="margin: 1.5rem auto;"></video>
+  <canvas id="snapshot" width=400 height=300 style="margin: 1.5rem auto;"></canvas>
+  <div class="capture_field">
+    <button id="capture">사진캡처</button>
+    <a href="#" id="downloader" download="image.png">
+      <button class="button_type1" id="download_btn">사진 저장</button>
+    </a>
+  </div>
+
+  <form id="imageForm" encType="multipart/form-data">
+    <label>이미지 선택<br><br>
+      <input type='file' class="fileInput" />
+    </label>
+    <button class="submit_btn button_type1">사진 분석</button>
+  </form>
+
+  <div id="main">
+    <div id="track-list"></div>
+  </div>
+
+  <div id="loading">
+    <img id="loading-image" src="/img/loading.gif" alt="Loading..." />
+  </div>
+
+
+
+  <script src="/js/moods.js"></script>
+  <script src="/js/search.js"></script>
+
+
+</body>
+
+</html>
