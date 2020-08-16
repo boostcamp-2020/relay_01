@@ -1,5 +1,4 @@
 # 08/14 Relay 1 - Week3
-## 공지내용
 
 # 💡 Relay Project - 소리올려  
 <img width="400" src="https://user-images.githubusercontent.com/60081031/89016426-af98e280-d353-11ea-9d8f-6a8c479e89fd.jpg">  
