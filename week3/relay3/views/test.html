@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>웹캠</div>
+  <video id="player" autoplay></video>
+  <button id="capture">영상캡처</button>
+  <button id="startVideo">영상시작</button>
+  <button id="stopVideo">영상종료</button>
+  <a href="#" id="downloader" download="image.png">Download!</a>
+  <canvas id="snapshot" width=620 height=360></canvas>
+  <script>
+    const player = document.getElementById('player');
+    const snapshotCanvas = document.getElementById('snapshot');
+    const captureButton = document.getElementById('capture');
+    const stopButton = document.getElementById('stopVideo');
+    const startButton = document.getElementById('startVideo');
+    let videoTracks;
+    let handleSuccess = function (stream) {
+      // Attach the video stream to the video element and autoplay.
+      player.srcObject = stream;
+      videoTracks = stream.getVideoTracks();
+    };
+    captureButton.addEventListener('click', () => {
+      let context = snapshot.getContext('2d');
+      // Draw the video frame to the canvas.
+      context.drawImage(player, 0, 0, snapshotCanvas.width,
+        snapshotCanvas.height);
+      document.getElementById("downloader").href = document.getElementById("snapshot").toDataURL("image/png");
+      // window.navigator.msSaveOrOpenBlob(snapshot, 'new_file.png')
+    });
+    stopButton.addEventListener('click', () => {
+      videoTracks.forEach((track) => { track.stop() });
+    })
+    startButton.addEventListener('click', () => {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(handleSuccess);
+    })
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(handleSuccess);
+  </script>
+</body>
+
+</html>
