@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const formidable = require('formidable');
 const exec = require('child_process').execSync;
-
+const { getMusicsByMood } = require('../dao/music-dao');
 
 /** 
  * POST /api/upload
@@ -34,7 +34,17 @@ router.post('/upload', (req, res) => {
     console.log("emotion****", emotion)
     res.json({ message: "success", emotion });
   });
+});
 
-})
+router.get('/music/:mood', async (req, res) => {
+  const moodString = req.params.mood;
+  try {
+    const musics = await getMusicsByMood(moodString);
+    res.json({ message: "success", musics });
+  } catch (err) {
+    console.error(err);
+      return res.json({ message: "error" })
+  }
+});
 
 module.exports = router;
