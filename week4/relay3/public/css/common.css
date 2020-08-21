@@ -1,0 +1,17 @@
+.page-header {
+  min-width: 1024px;
+  padding: 20px 0;
+  background-color: #07689f;
+}
+
+.page-title {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+.page-logo {
+  font-family: 'Pacifico', cursive;
+  color: #fafafa;
+  font-size: 36px;
+}

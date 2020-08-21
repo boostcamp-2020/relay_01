@@ -1,0 +1,162 @@
+/* .header {
+  background-color: gray;
+  width:100%;
+  height : 100px;
+} */
+.button_type1 {
+  display: inline-block;
+  width: 15rem;
+  height: 3.6rem;
+  margin: 3rem auto;
+  font-size: 1rem;
+  border: 1.5px solid #ff7e67;
+  border:none;
+  border-radius: 35px;
+  box-sizing: border-box;
+  background-color: #ff7e67;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+}
+.button_type1:hover {
+  background-color: #ffd571;
+}
+#imageForm {
+  margin : 5rem auto 0 auto;
+  width:30rem;
+
+}
+
+#snapshot {
+  display: none;
+  width:600px;
+  margin : 0 auto;
+  transform: rotateY(180deg);
+  -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+  -moz-transform:rotateY(180deg); /* Firefox */
+}
+video{
+  display: block;
+  width:600px;
+  margin : 0 auto;
+  transform: rotateY(180deg);
+  -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+  -moz-transform:rotateY(180deg); /* Firefox */
+}
+
+#capture {
+  display: inline-block;
+  width: 15rem;
+  height: 3.6rem;
+  font-size: 1rem;
+  border: 1.5px solid #ff7e67;
+  border-radius: 35px 35px 35px 35px;
+  box-sizing: border-box;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  color: #ff7e67;
+}
+
+#downloader button {
+  margin-left: 1.5rem;
+}
+
+.capture_field {
+  width: 32rem;
+  margin:2rem auto;
+
+}
+.error_msg {
+  line-height: 2.2rem;
+  font-size:1.6rem;
+  text-align: center;
+  padding-top: 5rem ;
+}
+
+
+/* 여기부터 동적으로 생성된 음악 리스트 관련 css*/
+
+.track {
+  display: flex;
+
+  padding: 30px 10px;
+  border-bottom: 1px solid #dddddd;
+
+  line-height: 1.4;
+}
+
+.name {
+  width: 400px;
+  font-size: 1.5rem;
+}
+
+.thumbnail {
+  display: block;
+
+  border-radius: 8px;
+  margin-right: 30px;
+
+  width: 300px;
+  height: 200px;
+}
+
+.track-info-wrapper {
+  display: grid;
+  width: 100%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "title title mood audio"
+    "des des des des";
+  gap: 20px 10px;
+  background-color: #DDDDDD;
+  border-radius: 30px;
+  padding: 15px;
+}
+
+.title {
+  font-size: 2rem;
+  grid-area: title;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mood {
+  grid-area: mood;
+}
+
+.preview_mp3 {
+  grid-area: audio;
+  right: 10px;
+}
+
+.description {
+  grid-area: des;
+}
+
+
+/* 로딩 이미지 */
+
+#loading {
+  width: 100%;  
+  height: 100%;  
+  top: 0px;
+  left: 0px;
+  position: fixed;  
+  display: none;  
+  opacity: 0.7;  
+  background-color: #fff;  
+  z-index: 99;  
+  text-align: center; 
+} 
+#loading-image {  
+  width : 90px;
+  height :90px;
+  position: absolute;  
+  top: calc(50% - 45px);  
+  left: calc(50% - 45px); 
+  z-index: 100; 
+}
+ 

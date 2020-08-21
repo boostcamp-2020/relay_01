@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/common.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/index.css" />
+  <title>텍스트로 노래 검색</title>
+</head>
+
+<body>
+
+  <header class="page-header">
+    <h1 class="page-title">
+      <a href="/" class="page-logo">SoRi-olryeo</a>
+    </h1>
+    <div class="mood-input-group">
+      <input id="input-mood" placeholder="감정을 입력하세요" />
+      <button id="search-mood">찾기</button>
+    </div>
+  </header>
+
+  <!-- <nav>
+    <a href="/search/cam" style="margin-top:3rem; display: block;">이미지로 검색
+    </a>
+  </nav> -->
+
+  <div id="main">
+    <div id="recommend"></div>
+    <div id="card-container"></div>
+    <div id="track-list"></div>
+  </div>
+
+
+  <script src="/js/util/moodParser.js"></script>
+  <script src="/js/DB/fakeDB/musicJson.js"></script>
+  <script src="/js/DB/moods.js"></script>
+  <script src="/js/util/api.js"></script>
+  <script src="/js/util/ShutterstockAPI.js"></script>
+
+  <script src="/js/script.js"></script>
+</body>
+
+</html>
