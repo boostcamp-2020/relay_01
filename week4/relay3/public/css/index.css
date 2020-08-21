@@ -133,5 +133,36 @@ header {
   grid-area: des;
 }
 
+#card-container{
+  display: flex;
+  justify-content: space-between;
+} 
+
+.url{
+  width: 220px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.card{
+  background-color: #ddd;
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.card-title{
+  margin-bottom: 10px;
+  width:220px;
+  height: 20px;
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
 
 
+
+#recommend h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}

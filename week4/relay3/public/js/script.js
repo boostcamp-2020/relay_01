@@ -1,5 +1,10 @@
 window.onload = init();
 
+const dumy = [
+ 
+]
+
+
 function init() {
   let inputValue = "";
   let input = document.getElementById("input-mood");
@@ -24,6 +29,16 @@ function init() {
 
     await removeMusic();
 
+    let recommend = document.getElementById("recommend");
+    recommend.innerHTML = `<h1>${dumy.length? '추천목록': '추천목록이 없습니다'}</h1>`
+
+    let container = document.getElementById("card-container");
+    
+    container.innerHTML = dumy.reduce((acc, music) => {
+        acc += createElement(music)
+        return acc
+      },'')
+
     audioJson.data
       .forEach(obj => {
         document
@@ -39,6 +54,17 @@ function init() {
       handleClick()
     }
   })
+}
+
+const createElement = (obj) => {
+  const {title, url, mood} = obj
+  const card = `<div class ='card'>`+
+                  `<div class ='card-title' title = '${title}'> ${title}</div>` +
+                  `<audio class='url' src = ${url} controls></audio>` +
+                   `<div class = 'mood'>${mood}</div>` +
+                `</div>`
+ 
+  return card
 }
 
 const removeMusic = () => {
