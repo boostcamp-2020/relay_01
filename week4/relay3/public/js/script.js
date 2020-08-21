@@ -24,21 +24,18 @@ function init() {
 
     await removeMusic();
     const url = `/api/music/${moodFromAdam}`
-    const { data } = await fetch(url, {
-      method: 'get',
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-      },
-    }, (res) => res.json())
+
+    const d = await fetch(url)
+    const { musics } = await d.json()
 
 
     let recommend = document.getElementById("recommend");
-    recommend.innerHTML = `<h1>${data.length ? '추천목록' : '추천목록이 없습니다'}</h1>`
+    recommend.innerHTML = `<h1>${musics.length ? '추천목록' : '추천목록이 없습니다'}</h1>`
 
     let container = document.getElementById("card-container");
 
 
-    container.innerHTML = data.reduce((acc, music) => {
+    container.innerHTML = musics.reduce((acc, music) => {
       acc += createElement(music)
       return acc
     }, '')

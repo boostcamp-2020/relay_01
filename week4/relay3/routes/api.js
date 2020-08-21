@@ -40,10 +40,11 @@ router.get('/music/:mood', async (req, res) => {
   const moodString = req.params.mood;
   try {
     const musics = await getMusicsByMood(moodString);
+    console.log(musics);
     res.json({ message: "success", musics });
   } catch (err) {
     console.error(err);
-      return res.json({ message: "error" })
+    return res.json({ message: "error" })
   }
 });
 
